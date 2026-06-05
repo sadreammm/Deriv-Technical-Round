@@ -1,0 +1,15 @@
+{
+  "allowed_issue_types": ["withdrawal_delay", "login_issue", "bonus_dispute"],
+  "required_reply_sections": ["acknowledgement", "next_steps", "safety_note"],
+  "forbidden_claims": ["immediate_refund", "guaranteed_delivery"],
+  "routing_rules": {
+    "escalation_on_high_risk": true
+  },
+  "quality_rubric": {
+    "1": "Very poor quality, lacks key information or is dismissive",
+    "2": "Poor quality, misses required sections or tone is off",
+    "3": "Acceptable, resolves the issue but has minor gaps",
+    "4": "Good quality, polite, clear, and follows all rules",
+    "5": "Excellent, proactive, empathetic, and extremely clear"
+  }
+}

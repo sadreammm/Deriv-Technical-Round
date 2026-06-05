@@ -1,0 +1,35 @@
+[
+  {
+    "ticket_id": "T-1001",
+    "customer_tone": "frustrated",
+    "issue_type": "withdrawal_delay",
+    "customer_message": "Where is my money? I requested a withdrawal two days ago and it is still pending. Please release it immediately.",
+    "account_context": {
+      "account_id": "ACC-9912",
+      "pending_withdrawal_amount": 250.0,
+      "kyc_status": "verified"
+    }
+  },
+  {
+    "ticket_id": "T-1002",
+    "customer_tone": "neutral",
+    "issue_type": "login_issue",
+    "customer_message": "I forgot my password and cannot log into my account. The reset link is not arriving in my inbox.",
+    "account_context": {
+      "account_id": "ACC-0482",
+      "pending_withdrawal_amount": 0.0,
+      "kyc_status": "unverified"
+    }
+  },
+  {
+    "ticket_id": "T-1003",
+    "customer_tone": "angry",
+    "issue_type": "bonus_dispute",
+    "customer_message": "You guys scammed me! My welcome bonus was cancelled without notice. I demand my bonus back right now!",
+    "account_context": {
+      "account_id": "ACC-3847",
+      "pending_withdrawal_amount": 0.0,
+      "kyc_status": "verified"
+    }
+  }
+]
