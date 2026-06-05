@@ -40,18 +40,18 @@ def run_pipeline(non_interactive: bool = False):
         print(f"Stage 3 complete. Current State: {state.name}")
 
         # Stage 4: Human Override
-        state = s4_override(state, non_interactive=non_interactive)
+        state, overrides = s4_override(state, tickets, policy_checks, llm_reviews, non_interactive=non_interactive)
         print(f"Stage 4 complete. Current State: {state.name}")
 
         # Stage 5: Final Routing
-        state = s5_route(state)
+        state, final_decisions = s5_route(state, tickets, draft_replies, policy_checks, llm_reviews, repaired_replies, overrides)
         print(f"Stage 5 complete. Current State: {state.name}")
 
         # Stage 6: Report and Metrics
-        state = s6_report(state)
+        state = s6_report(state, tickets, final_decisions, llm_reviews, repaired_replies, policy_checks)
         print(f"Stage 6 complete. Current State: {state.name}")
 
-        print("Pipeline execution finished successfully.")
+        print("\nPipeline complete. All artifacts written to outputs/")
 
     except NotImplementedError as e:
         print(f"\n[STUB STOP] Pipeline stopped at a stage that is not implemented yet: {e}")
